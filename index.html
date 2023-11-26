@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <title>React App</title>
-  </head>
-  <body>
-    <h1>welocome</h1>
-    <p>Hello</p>
-  </body>
-</html>
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import ProductInfo from './ProductInfo';
+import ProductList from './ProductList';
+import ProductDesign from './ProductDesign';
+import Review from './Review';
+import { Route, Routes } from 'react-router-dom';
+
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/products/:id" element={<ProductDesign />} />
+      </Routes>
+      <ProductInfo />
+      <Review />
+      <ProductList />
+    </div>
+  );
+  
+}
+
+export default App;
